@@ -1,0 +1,33 @@
+{
+    "ID_MAIN": "0000000000",
+    "BOT_TOKEN": "**YOUR BOT TOKEN**", 
+    "URL_SBB": "http://transport.opendata.ch/v1/stationboard?",
+    "URL_OPEN_METEO": "https://api.open-meteo.com/v1/forecast",
+    
+    "API_KEY_OPENROUTESERVICE": "**YOUR API KEY**",
+    "API_KEY_GOOGLEMAPS": "**YOUR API KEY**",
+    
+    "SBB_STARTING_STOP": "**CLOSEST TRANSPORT STATION**",
+
+    "TELEGRAM ID USER 1": {
+        "ID": "TELEGRAM ID USER 1",
+        "COORDINATES": {
+            "LAT":"00.00000",
+            "LON":"00.00000"
+        },
+        "STOP": "**CLOSEST TRANSPORT STATION**", 
+        "CALENDARS": {
+            "**YOUR CALENDAR ID 1**": 0, 
+            "**YOUR CALENDAR ID 2**": 0
+        }
+    },
+    "TELEGRAM ID USER 2": {
+        "ID": "TELEGRAM ID USER 2", 
+        "COORDINATES": {
+            "LAT":"00.00000",
+            "LON":"00.00000"   
+        }, 
+        "STOP": "**CLOSEST TRANSPORT STATION**"
+    }
+
+}
