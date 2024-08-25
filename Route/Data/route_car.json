@@ -1,0 +1,262 @@
+[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 46.5251648,
+                "lng": 6.574887599999999
+            },
+            "southwest": {
+                "lat": 46.5171016,
+                "lng": 6.5655636
+            }
+        },
+        "copyrights": "Map data \u00a92024",
+        "legs": [
+            {
+                "distance": {
+                    "text": "2.1 km",
+                    "value": 2089
+                },
+                "duration": {
+                    "text": "6 mins",
+                    "value": 341
+                },
+                "end_address": "Rolex Learning Center, 1015 Ecublens, Switzerland",
+                "end_location": {
+                    "lat": 46.51920030000001,
+                    "lng": 6.567348
+                },
+                "start_address": "Vortex BP 906, Rte de Praz V\u00e9guey 29, 1022 Chavannes-pr\u00e8s-Renens, Switzerland",
+                "start_location": {
+                    "lat": 46.5251274,
+                    "lng": 6.574887599999999
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 100
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 21
+                        },
+                        "end_location": {
+                            "lat": 46.52472299999999,
+                            "lng": 6.573987
+                        },
+                        "html_instructions": "Head <b>west</b> toward <b>Rte de Praz V\u00e9guey</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+                        "polyline": {
+                            "points": "a}}zGadcg@AHE~@?F@B?B?B@@@?@@x@\\DB@@BBBB@D@H@J@H"
+                        },
+                        "start_location": {
+                            "lat": 46.5251274,
+                            "lng": 6.574887599999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 km",
+                            "value": 303
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 73
+                        },
+                        "end_location": {
+                            "lat": 46.5226276,
+                            "lng": 6.5741463
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Rte de Praz V\u00e9guey</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "oz}zGm~bg@PEH?TGnC}ALGLMh@YDCHEFEFADALAL?N@H@LDJDNHJDJHFFBHDP?R?NAJAFCDCBI@"
+                        },
+                        "start_location": {
+                            "lat": 46.52472299999999,
+                            "lng": 6.573987
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 230
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 35
+                        },
+                        "end_location": {
+                            "lat": 46.52163609999999,
+                            "lng": 6.5718477
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Rte de la Sorge</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "mm}zGm_cg@Zj@DJPVJNBBVTXR@@r@h@FHFHBHBN?H@nA@dAA@?`A"
+                        },
+                        "start_location": {
+                            "lat": 46.5226276,
+                            "lng": 6.5741463
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.4 km",
+                            "value": 383
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 55
+                        },
+                        "end_location": {
+                            "lat": 46.5182381,
+                            "lng": 6.572250899999999
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Avenue Fran\u00e7ois-Alphonse Forel</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "gg}zGaqbg@bBAJ?n@?P@F@B?B?d@CbACn@?F?P?h@A\\?N?R?\\AR?@?RC`@OXMJ?@APIJGTO"
+                        },
+                        "start_location": {
+                            "lat": 46.52163609999999,
+                            "lng": 6.5718477
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 204
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 23
+                        },
+                        "end_location": {
+                            "lat": 46.5175232,
+                            "lng": 6.569826099999999
+                        },
+                        "html_instructions": "At the roundabout, take the <b>1st</b> exit onto <b>Rte Cantonale</b>/<wbr/><b>Route 1</b>",
+                        "maneuver": "roundabout-right",
+                        "polyline": {
+                            "points": "_r|zGqsbg@?@@@?@?@@@?@?@@??@@@@@?@@??@B@HPJb@f@xBXbBPhA@HF\\Ff@BZ"
+                        },
+                        "start_location": {
+                            "lat": 46.5182381,
+                            "lng": 6.572250899999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 km",
+                            "value": 316
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 29
+                        },
+                        "end_location": {
+                            "lat": 46.5171016,
+                            "lng": 6.565754699999999
+                        },
+                        "html_instructions": "At the roundabout, take the <b>1st</b> exit and stay on <b>Rte Cantonale</b>/<wbr/><b>Route 1</b>",
+                        "maneuver": "roundabout-right",
+                        "polyline": {
+                            "points": "om|zGmdbg@?@A??@?@?@?@?@?@?@?@@@?@?@@@?@Dr@NdDRfEHjAH|@Dh@@^@\\FzA@b@"
+                        },
+                        "start_location": {
+                            "lat": 46.5175232,
+                            "lng": 6.569826099999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 112
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 15
+                        },
+                        "end_location": {
+                            "lat": 46.5180729,
+                            "lng": 6.5655636
+                        },
+                        "html_instructions": "At the roundabout, take the <b>1st</b> exit onto <b>All. de Savoie</b>",
+                        "maneuver": "roundabout-right",
+                        "polyline": {
+                            "points": "{j|zG}jag@A?A??@A??@A??@A??@A@?@?@A??@m@BE@A@A?CBG?U?w@AQBIBEB"
+                        },
+                        "start_location": {
+                            "lat": 46.5171016,
+                            "lng": 6.565754699999999
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.3 km",
+                            "value": 289
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 58
+                        },
+                        "end_location": {
+                            "lat": 46.5198842,
+                            "lng": 6.566358999999999
+                        },
+                        "html_instructions": "At the roundabout, continue straight to stay on <b>All. de Savoie</b>",
+                        "maneuver": "roundabout-right",
+                        "polyline": {
+                            "points": "}p|zGwiag@?AA??A?AAA?AA?AAA?A?A?A??@A?A??@?@A??@?@A?A?MCSAQAM?y@@A?[?Q@IAc@@e@?C?C@]?q@AK?EAECCCCGAEAE?M@K@C@ELg@FQN]"
+                        },
+                        "start_location": {
+                            "lat": 46.5180729,
+                            "lng": 6.5655636
+                        },
+                        "travel_mode": "DRIVING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 152
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 32
+                        },
+                        "end_location": {
+                            "lat": 46.51920030000001,
+                            "lng": 6.567348
+                        },
+                        "html_instructions": "Turn <b>right</b> onto <b>Rte des Noyerettes</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "g||zGwnag@B?D@H?D@DBLFBBDBB?D@^CFCHAFKDIBOBO?e@AyB"
+                        },
+                        "start_location": {
+                            "lat": 46.5198842,
+                            "lng": 6.566358999999999
+                        },
+                        "travel_mode": "DRIVING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "a}}zGadcg@EtABHbAd@FFBNBTPE^G|CeBv@g@NINGRC\\@VFr@^JPDP?RAZELMD`@v@\\f@ZXZTz@r@JRBX@xEnBA`A@t@AlCCjBAfAEz@]LAr@_@DJHJTt@f@xBXbBRrANdA@^?B?F@FV|E\\rGNfBL|DE@CDCFu@FEB]?iA@OFAA?CCCIAGHOCmBAkCBoAAQAIGEMASBOf@}AXB\\RH@f@GHAFKHYBu@AyB"
+        },
+        "summary": "Rte Cantonale/Route 1",
+        "warnings": [],
+        "waypoint_order": []
+    }
+]

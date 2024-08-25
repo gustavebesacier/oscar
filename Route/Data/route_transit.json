@@ -1,0 +1,411 @@
+[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 46.5252907,
+                "lng": 6.6304664
+            },
+            "southwest": {
+                "lat": 46.5070779,
+                "lng": 6.5661359
+            }
+        },
+        "copyrights": "Map data \u00a92024 Google",
+        "legs": [
+            {
+                "arrival_time": {
+                    "text": "10:40\u202fAM",
+                    "time_zone": "Europe/Zurich",
+                    "value": 1724488848
+                },
+                "departure_time": {
+                    "text": "10:09\u202fAM",
+                    "time_zone": "Europe/Zurich",
+                    "value": 1724486956
+                },
+                "distance": {
+                    "text": "7.4 km",
+                    "value": 7371
+                },
+                "duration": {
+                    "text": "32 mins",
+                    "value": 1892
+                },
+                "end_address": "Rolex Learning Center, 1015 Ecublens, Switzerland",
+                "end_location": {
+                    "lat": 46.5182574,
+                    "lng": 6.567583399999999
+                },
+                "start_address": "Pl. de la Navigation 10, 1006 Lausanne, Switzerland",
+                "start_location": {
+                    "lat": 46.5075316,
+                    "lng": 6.6263292
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "58 m",
+                            "value": 58
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 43
+                        },
+                        "end_location": {
+                            "lat": 46.5070779,
+                            "lng": 6.626439
+                        },
+                        "html_instructions": "Walk to Ouchy\u2013Olympique",
+                        "polyline": {
+                            "points": "aozzGqemg@Ja@lAJ"
+                        },
+                        "start_location": {
+                            "lat": 46.5075316,
+                            "lng": 6.6263292
+                        },
+                        "steps": [
+                            {
+                                "distance": {
+                                    "text": "15 m",
+                                    "value": 15
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 10
+                                },
+                                "end_location": {
+                                    "lat": 46.5074665,
+                                    "lng": 6.626500399999999
+                                },
+                                "html_instructions": "Head <b>southeast</b> on <b>Rue du Lac</b> toward <b>Pass. du Liseron</b>",
+                                "polyline": {
+                                    "points": "aozzGqemg@Ja@"
+                                },
+                                "start_location": {
+                                    "lat": 46.5075316,
+                                    "lng": 6.6263292
+                                },
+                                "travel_mode": "WALKING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "43 m",
+                                    "value": 43
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 33
+                                },
+                                "end_location": {
+                                    "lat": 46.5070779,
+                                    "lng": 6.626439
+                                },
+                                "html_instructions": "Turn <b>right</b> at <b>Pass. du Liseron</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "unzzGsfmg@lAJ"
+                                },
+                                "start_location": {
+                                    "lat": 46.5074665,
+                                    "lng": 6.626500399999999
+                                },
+                                "travel_mode": "WALKING"
+                            }
+                        ],
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "1.5 km",
+                            "value": 1461
+                        },
+                        "duration": {
+                            "text": "7 mins",
+                            "value": 420
+                        },
+                        "end_location": {
+                            "lat": 46.520321,
+                            "lng": 6.630474
+                        },
+                        "html_instructions": "Subway towards Epalinges, Croisettes",
+                        "polyline": {
+                            "points": "unzzGogmg@?D}Du@a@IiE{@cAUiK}BUGc@Kw@QiB]gASuCk@SEQEwAWc@K{@SeFaAw@Oa@ImCi@KCaHuAq@MkE}@"
+                        },
+                        "start_location": {
+                            "lat": 46.507469,
+                            "lng": 6.626638
+                        },
+                        "transit_details": {
+                            "arrival_stop": {
+                                "location": {
+                                    "lat": 46.520321,
+                                    "lng": 6.630474
+                                },
+                                "name": "Lausanne-Flon"
+                            },
+                            "arrival_time": {
+                                "text": "10:17\u202fAM",
+                                "time_zone": "Europe/Zurich",
+                                "value": 1724487420
+                            },
+                            "departure_stop": {
+                                "location": {
+                                    "lat": 46.507469,
+                                    "lng": 6.626638
+                                },
+                                "name": "Ouchy\u2013Olympique"
+                            },
+                            "departure_time": {
+                                "text": "10:10\u202fAM",
+                                "time_zone": "Europe/Zurich",
+                                "value": 1724487000
+                            },
+                            "headsign": "Epalinges, Croisettes",
+                            "line": {
+                                "agencies": [
+                                    {
+                                        "name": "Transports publics de la r\u00e9gion lausannoise",
+                                        "phone": "011 41 21 621 01 11",
+                                        "url": "https://www.t-l.ch/"
+                                    }
+                                ],
+                                "color": "#ed028c",
+                                "short_name": "m2",
+                                "text_color": "#ffffff",
+                                "vehicle": {
+                                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                    "name": "Subway",
+                                    "type": "SUBWAY"
+                                }
+                            },
+                            "num_stops": 5
+                        },
+                        "travel_mode": "TRANSIT"
+                    },
+                    {
+                        "distance": {
+                            "text": "5.3 km",
+                            "value": 5280
+                        },
+                        "duration": {
+                            "text": "13 mins",
+                            "value": 780
+                        },
+                        "end_location": {
+                            "lat": 46.522194,
+                            "lng": 6.566136999999999
+                        },
+                        "html_instructions": "Subway towards Renens VD, gare",
+                        "polyline": {
+                            "points": "__}zGm_ng@NzCMbAMdAIh@w@rF]|BKp@Kn@Kp@UbBm@dEQlAQjAa@lCG^Ib@ALADE\\CNANAH?DEb@Cl@At@Ar@?H@P@^Bj@Bd@?@HrABf@Bt@?^?l@?v@?l@?B?HAvAApCAp@ATAfA?t@BpALdCDp@Br@?hBCj@Aj@Ep@Gp@CPG`@Kn@ADUdAKh@Id@S`AYpAc@rBGPQz@G^]nBe@tCYnBOfASzAAFCVo@fEQlAKj@G`@MdAc@zDOnAE~@?^@fAD`ABp@BZ@LD\\TnBLf@HZN\\Zp@^hAZrAFbA?xAGrAIhAMlAYvBEZg@lD_@pCe@fD?FCNCPCVIlAAt@?J?`@BpAFbARrAF\\Jh@T~@L`@JZVt@Ph@Pf@Lp@Jr@Jv@Dp@Dp@?@@f@@z@BhA@`A@^B~A@~@?l@An@Gl@Ib@ADWx@c@hAYt@EF]`AGPq@lBGNg@pAaAhCs@lBSj@GROn@Ix@?bAB`AH|ABd@@TDn@JdCLrBFnADt@?@Bb@Lp@Ln@J`@h@xA`@|@r@vAxA|CrArCJTVj@`BtD?@Th@FPDFFNN`@Pb@r@|APh@Jf@D\\BV@R?f@@jB?T?NBXDr@@T@T?R?L?TAj@CTCTGh@GTQl@Oj@Oh@IZEXARAD?DG`@CXEb@C`@Cf@APAP?jA@lBH?"
+                        },
+                        "start_location": {
+                            "lat": 46.520321,
+                            "lng": 6.630474
+                        },
+                        "transit_details": {
+                            "arrival_stop": {
+                                "location": {
+                                    "lat": 46.522194,
+                                    "lng": 6.566136999999999
+                                },
+                                "name": "EPFL"
+                            },
+                            "arrival_time": {
+                                "text": "10:33\u202fAM",
+                                "time_zone": "Europe/Zurich",
+                                "value": 1724488380
+                            },
+                            "departure_stop": {
+                                "location": {
+                                    "lat": 46.520321,
+                                    "lng": 6.630474
+                                },
+                                "name": "Lausanne-Flon"
+                            },
+                            "departure_time": {
+                                "text": "10:20\u202fAM",
+                                "time_zone": "Europe/Zurich",
+                                "value": 1724487600
+                            },
+                            "headsign": "Renens VD, gare",
+                            "line": {
+                                "agencies": [
+                                    {
+                                        "name": "Transports publics de la r\u00e9gion lausannoise",
+                                        "phone": "011 41 21 621 01 11",
+                                        "url": "https://www.t-l.ch/"
+                                    }
+                                ],
+                                "color": "#ed028c",
+                                "short_name": "m1",
+                                "text_color": "#ffffff",
+                                "vehicle": {
+                                    "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                    "name": "Subway",
+                                    "type": "SUBWAY"
+                                }
+                            },
+                            "num_stops": 9
+                        },
+                        "travel_mode": "TRANSIT"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.6 km",
+                            "value": 572
+                        },
+                        "duration": {
+                            "text": "8 mins",
+                            "value": 467
+                        },
+                        "end_location": {
+                            "lat": 46.5182574,
+                            "lng": 6.567583399999999
+                        },
+                        "html_instructions": "Walk to Rolex Learning Center, 1015 Ecublens, Switzerland",
+                        "polyline": {
+                            "points": "yi}zGgqag@AcABeBB{@B[LBD@FDHBFE^QJGHIFQBBLHB@j@A\\AR?BDpBCJ?@??A@??A@A?A?I@??A@?VA\\?PA@BB@RDL@NEH?LAF?`@?H?b@?|A?@?DLBJBDHNFHDHFPDPBLCFAHAD"
+                        },
+                        "start_location": {
+                            "lat": 46.5220517,
+                            "lng": 6.5667597
+                        },
+                        "steps": [
+                            {
+                                "distance": {
+                                    "text": "0.1 km",
+                                    "value": 99
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 79
+                                },
+                                "end_location": {
+                                    "lat": 46.5219993,
+                                    "lng": 6.5680516
+                                },
+                                "html_instructions": "Head <b>east</b> on <b>Rte de la Sorge</b> toward <b>Chem. des Arpenteurs</b>",
+                                "polyline": {
+                                    "points": "yi}zGgqag@AcABeBB{@B["
+                                },
+                                "start_location": {
+                                    "lat": 46.5220517,
+                                    "lng": 6.5667597
+                                },
+                                "travel_mode": "WALKING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "69 m",
+                                    "value": 69
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 61
+                                },
+                                "end_location": {
+                                    "lat": 46.5214633,
+                                    "lng": 6.5682718
+                                },
+                                "html_instructions": "Turn <b>right</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "oi}zGiyag@LBD@FDHBFE^QJGHIFQ"
+                                },
+                                "start_location": {
+                                    "lat": 46.5219993,
+                                    "lng": 6.5680516
+                                },
+                                "travel_mode": "WALKING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "0.3 km",
+                                    "value": 339
+                                },
+                                "duration": {
+                                    "text": "5 mins",
+                                    "value": 275
+                                },
+                                "end_location": {
+                                    "lat": 46.5184951,
+                                    "lng": 6.5682886
+                                },
+                                "html_instructions": "Turn <b>right</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "cf}zGuzag@BBLHB@j@A\\AR?BDpBCJ?@??A@??A@A?A?I@??A@?VA\\?PA@BB@RDL@NEH?LAF?`@?H?b@?|A?@?"
+                                },
+                                "start_location": {
+                                    "lat": 46.5214633,
+                                    "lng": 6.5682718
+                                },
+                                "travel_mode": "WALKING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "55 m",
+                                    "value": 55
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 44
+                                },
+                                "end_location": {
+                                    "lat": 46.5182198,
+                                    "lng": 6.567703799999999
+                                },
+                                "html_instructions": "Turn <b>right</b>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "ss|zGyzag@DLBJBDHNFHDHFPDPBL"
+                                },
+                                "start_location": {
+                                    "lat": 46.5184951,
+                                    "lng": 6.5682886
+                                },
+                                "travel_mode": "WALKING"
+                            },
+                            {
+                                "distance": {
+                                    "text": "10 m",
+                                    "value": 10
+                                },
+                                "duration": {
+                                    "text": "1 min",
+                                    "value": 8
+                                },
+                                "end_location": {
+                                    "lat": 46.5182574,
+                                    "lng": 6.567583399999999
+                                },
+                                "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                                "maneuver": "turn-right",
+                                "polyline": {
+                                    "points": "{q|zGcwag@CFAHAD"
+                                },
+                                "start_location": {
+                                    "lat": 46.5182198,
+                                    "lng": 6.567703799999999
+                                },
+                                "travel_mode": "WALKING"
+                            }
+                        ],
+                        "travel_mode": "WALKING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "aozzGqemg@Ja@lAJmAg@?D_F_AmGqA{NcD{IcBiE}@mMeCkPeDNzC[hCkBlM{AjKmAfIStAGn@IpAChBFfBPbDBtA?dBArCG`HBfCRvDB|CEvAMbBKr@o@dD{AlHYlAe@nC_AdGc@bDgAtHSlAq@`GUnC@fBN|CZlCVbAj@nAz@|CFbA?xAQ|CuAnKiApIGh@KbC?l@BpAFbAZpB`@hBbA|C^xAVjBJdBHnFFlFAn@Gl@Kh@{@bC_@|@_BpEqDtJWbAIx@?bAL~CDz@f@xJDv@PtAXpAh@xA`@|@lCtF~AhDnClGd@jAdA`C\\pAHt@@z@DjDHrB?b@E`AK~@YbA_@tAOt@K`AQfCCb@@xDH?Z{BAcAFaDB[LBLFHBFEj@YP[PLn@?p@ABDpBCL?@A@E@Kv@AR@VF\\CVAvA?~A?HXZh@Lb@BLCFCN"
+        },
+        "summary": "",
+        "warnings": [
+            "Walking directions are in beta. Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+        ],
+        "waypoint_order": []
+    }
+]
