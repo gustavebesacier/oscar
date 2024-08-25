@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ca776e82753f2b87da5e195c2254299a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ca776e82753f2b87da5e195c2254299a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ca776e82753f2b87da5e195c2254299a = L.map(
+                "map_ca776e82753f2b87da5e195c2254299a",
+                {
+                    center: [46.5075316, 6.6263292],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_de0fa069d4b5ee1c3f6a810ef495c81d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_de0fa069d4b5ee1c3f6a810ef495c81d.addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+            var tile_layer_29ca31bd96d82791b4f581fb2936cf31 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_29ca31bd96d82791b4f581fb2936cf31.addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+            var tile_layer_bc8e067fa071775cfdb718f9dd30898a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_bc8e067fa071775cfdb718f9dd30898a.addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+            var layer_control_722b6dd6b12d6ed082bcdffe87969680_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_de0fa069d4b5ee1c3f6a810ef495c81d,
+                    "cartodbdarkmatter" : tile_layer_29ca31bd96d82791b4f581fb2936cf31,
+                    "cartodbpositron" : tile_layer_bc8e067fa071775cfdb718f9dd30898a,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_722b6dd6b12d6ed082bcdffe87969680 = L.control.layers(
+                layer_control_722b6dd6b12d6ed082bcdffe87969680_layers.base_layers,
+                layer_control_722b6dd6b12d6ed082bcdffe87969680_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_ca776e82753f2b87da5e195c2254299a);
+
+        
+    
+            var poly_line_9159e917d1c9fc1ff0dbfaafb51edea0 = L.polyline(
+                [[46.50753, 6.62633], [46.50747, 6.6265], [46.50708, 6.62644], [46.50747, 6.62664], [46.50747, 6.62661], [46.50859, 6.62693], [46.50994, 6.62734], [46.51248, 6.62816], [46.51422, 6.62866], [46.51523, 6.62897], [46.51754, 6.62964], [46.52032, 6.63047], [46.52024, 6.62969], [46.52038, 6.629], [46.52092, 6.62669], [46.52138, 6.62471], [46.52177, 6.62307], [46.52187, 6.62264], [46.52191, 6.6224], [46.52196, 6.62199], [46.52198, 6.62146], [46.52194, 6.62094], [46.52185, 6.62012], [46.52183, 6.61969], [46.52183, 6.61918], [46.52184, 6.61844], [46.52188, 6.61699], [46.52186, 6.61631], [46.52176, 6.61539], [46.52174, 6.6146], [46.52177, 6.61416], [46.52184, 6.61366], [46.5219, 6.6134], [46.52214, 6.61257], [46.5226, 6.61106], [46.52273, 6.61067], [46.52292, 6.60995], [46.52324, 6.60864], [46.52342, 6.60782], [46.52378, 6.60627], [46.52388, 6.60588], [46.52413, 6.60459], [46.52424, 6.60387], [46.52423, 6.60335], [46.52415, 6.60256], [46.52401, 6.60185], [46.52389, 6.60151], [46.52367, 6.60111], [46.52337, 6.60032], [46.52333, 6.59998], [46.52333, 6.59953], [46.52342, 6.59874], [46.52385, 6.59674], [46.52422, 6.59505], [46.52426, 6.59484], [46.52432, 6.59418], [46.52432, 6.59395], [46.5243, 6.59354], [46.52426, 6.5932], [46.52412, 6.59263], [46.52395, 6.5921], [46.52361, 6.59131], [46.52345, 6.59086], [46.52333, 6.59032], [46.52327, 6.58981], [46.52322, 6.58861], [46.52318, 6.58742], [46.52319, 6.58718], [46.52323, 6.58695], [46.52329, 6.58674], [46.52359, 6.58608], [46.52375, 6.58577], [46.52423, 6.58472], [46.52512, 6.58285], [46.52524, 6.58251], [46.52529, 6.58222], [46.52529, 6.58188], [46.52522, 6.58108], [46.52519, 6.58078], [46.52499, 6.57889], [46.52496, 6.57861], [46.52487, 6.57818], [46.52474, 6.57777], [46.52453, 6.57732], [46.52436, 6.57701], [46.52365, 6.57578], [46.52317, 6.57493], [46.52245, 6.57358], [46.52226, 6.5732], [46.52191, 6.57255], [46.52176, 6.57214], [46.52171, 6.57187], [46.5217, 6.57157], [46.52167, 6.57071], [46.52162, 6.57013], [46.52162, 6.56995], [46.52165, 6.56962], [46.52171, 6.5693], [46.52184, 6.56896], [46.522, 6.56853], [46.52208, 6.56826], [46.52214, 6.56793], [46.52223, 6.56725], [46.52225, 6.56707], [46.52224, 6.56614], [46.52219, 6.56614], [46.52205, 6.56676], [46.52206, 6.5671], [46.52202, 6.56791], [46.522, 6.56805], [46.52193, 6.56803], [46.52186, 6.56799], [46.52181, 6.56797], [46.52177, 6.568], [46.52155, 6.56813], [46.52146, 6.56827], [46.52137, 6.5682], [46.52113, 6.5682], [46.52088, 6.56821], [46.52086, 6.56818], [46.52029, 6.5682], [46.52022, 6.5682], [46.52021, 6.56821], [46.5202, 6.56824], [46.52019, 6.5683], [46.51991, 6.56831], [46.51981, 6.5683], [46.51969, 6.56826], [46.51954, 6.56828], [46.51942, 6.56829], [46.51898, 6.56829], [46.5185, 6.56829], [46.51845, 6.56816], [46.51831, 6.56795], [46.51824, 6.56777], [46.51822, 6.5677], [46.51824, 6.56766], [46.51826, 6.56758]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+            var marker_5665076257516fe4585f87db7f81b734 = L.marker(
+                [46.5075316, 6.6263292],
+                {}
+            ).addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+        var popup_0632e8511f0e1639e3405198ccc8b319 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e434bf0d9375dcc17fc79168d75c0eb4 = $(`<div id="html_e434bf0d9375dcc17fc79168d75c0eb4" style="width: 100.0%; height: 100.0%;">Pl. de la Navigation 10, 1006 Lausanne, Switzerland</div>`)[0];
+                popup_0632e8511f0e1639e3405198ccc8b319.setContent(html_e434bf0d9375dcc17fc79168d75c0eb4);
+            
+        
+
+        marker_5665076257516fe4585f87db7f81b734.bindPopup(popup_0632e8511f0e1639e3405198ccc8b319)
+        ;
+
+        
+    
+    
+            var marker_6121bcbe9f21ad367cfac3d3ffd4be4b = L.marker(
+                [46.5182574, 6.567583399999999],
+                {}
+            ).addTo(map_ca776e82753f2b87da5e195c2254299a);
+        
+    
+        var popup_ae1e48a87b7d30a0e169cd85891779e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acb51c63d0fc51e9a7c4fe37f69c2842 = $(`<div id="html_acb51c63d0fc51e9a7c4fe37f69c2842" style="width: 100.0%; height: 100.0%;">Rolex Learning Center, 1015 Ecublens, Switzerland</div>`)[0];
+                popup_ae1e48a87b7d30a0e169cd85891779e0.setContent(html_acb51c63d0fc51e9a7c4fe37f69c2842);
+            
+        
+
+        marker_6121bcbe9f21ad367cfac3d3ffd4be4b.bindPopup(popup_ae1e48a87b7d30a0e169cd85891779e0)
+        ;
+
+        
+    
+</script>
+</html>
