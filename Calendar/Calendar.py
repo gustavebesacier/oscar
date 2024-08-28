@@ -2,16 +2,18 @@ from gcsa.google_calendar import GoogleCalendar
 from gcsa.event import Event
 from datetime import timedelta, datetime
 
+import pytz
 import os
 import sys
 import copy
+import json
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Utils import settings
+from Route import Route
 
 CREDENTIAL_PATH = os.path.dirname(os.path.abspath(__file__)) + "/credential.json"
 TODAY = datetime.now() + timedelta(days=0)
-# ID = "7169943565"
 
 
 def get_calendars_user(user_id: str) -> dict:
@@ -82,11 +84,25 @@ def get_list_events_time(calendar_events: dict) -> dict:
     """Given a dict of calendars, returns it with events ordered by starting time."""
     
     for calendar in calendar_events:
+        
         list_events_raw = copy.deepcopy(calendar_events[calendar])
-        list_event_ordered = sorted(list_events_raw, key=lambda elem: elem.start)
-        calendar_events_offset[calendar] = copy.deepcopy(list_event_ordered)
 
-    return calendar_events_offset
+        # for event in calendar_events[calendar]:
+        #     # if isinstance(event.start, datetime.date):
+        #     event.start = datetime.combine(event.start, datetime.min.time())
+        list_event_ordered = sorted(list_events_raw, key=lambda event: check_type(event))
+        calendar_events[calendar] = copy.deepcopy(list_event_ordered)
+
+    return calendar_events
+
+def check_type(event: Event):
+    
+    if not isinstance(event.start, datetime):
+        event.start = datetime.combine(event.start, datetime.min.time())
+        event.start = pytz.utc.localize(event.start)
+        event.start = event.start.astimezone(pytz.utc)
+
+    return event.start
 
 
 def get_events_tomorrow(calendar_events: dict, days_forward: int= 1) -> dict:    
@@ -107,9 +123,7 @@ def get_events_tomorrow(calendar_events: dict, days_forward: int= 1) -> dict:
 
     return calendar_events_tomorrow
 
-#TODO: create a function to create a fancy string to export to Telegram.py with the day's events
 
-#TODO: create a function to get the first event of tomorrow
 def get_first_event_day(calendar_events_tomorrow: dict) -> Event:
     """From a dictionnary of all the events of a specific day, it returns the first event of the day.
 
@@ -154,35 +168,132 @@ def check_address(event: Event):
     return address
 
 #TODO: create a fancy string to inform user before they go to bed
+def travel_time(event: Event, user_id, walk = True, transit = True, car = False, margin_delta = timedelta(minutes=15), simulation = False):
+
+    time_event = event.start
+    # TODO: add the margin delta of each user in the settings file
+    arrival_time_event = time_event - margin_delta
+
+    output = []
+
+    event_name = event.summary if event.summary else "Unnamed Event"
+    start_time = event.start.strftime('%H:%M') if event.start else "No start time"
+
+    out1 = f"📆 Your first event tomorrow is {event_name} and starts at {start_time}."
+    output.append(out1)
+
+    loc_event = event.location if event.location else None
+    if loc_event:
+        out2 = f"🕰️ The event will take place at {loc_event}.\n"
+        output.append(out2)
+        lat_event, lon_event = Route.address_to_coordinates(loc_event)
+        
+        # TODO: trouver un moyen de récupérer le user ID
+        try:
+            loc_user = settings.get_parameter(user_id)["COORDINATES"]
+        except:
+            user_id = settings.get_parameter("ID_MAIN")
+            loc_user = settings.get_parameter(user_id)["COORDINATES"]
+
+        lat_user, lon_user = loc_user["LAT"], loc_user["LON"]
+
+        # 1. Get the string that summmarizes the walk route
+        if walk:
+            # route_walk = Route.get_route(lat_user, lon_user, lat_event, lon_event)
+            # distance_walk, duration_walk = Route.get_time_distance_openrouteservice(route_walk)
+            if simulation:
+                path = "Route/Data/route_walk.json"
+                with open(path, "r") as json_file:
+                    route_walk = json.load(json_file)
+            else:
+                route_walk = Route.get_route_gmaps(lat_user, lon_user, lat_event, lon_event, arrival_time=arrival_time_event, transit="walking")
+            summary_walk = Route.export_string_route(route_walk) + "\n"
+            output.append(summary_walk)
+
+        # 2. Get the string that summmarizes the transit route
+        if transit:
+            if simulation:
+                path = "Route/Data/route_transit.json"
+                with open(path, "r") as json_file:
+                    route_transit = json.load(json_file)
+            else:
+                route_transit = Route.get_route_gmaps(lat_user, lon_user, lat_event, lon_event, arrival_time=arrival_time_event, transit="transit")
+            summary_transit = Route.export_string_route(route_transit) + "\n"
+            output.append(summary_transit)
+
+    else:
+        output.append("No location was specified for the event.")
+
+    output_full = "\n".join(output)
+
+    return output_full
+
+def export_first_event_tomorrow(user_id, simulation = True):
+
+    calendars_user = get_calendars_user(user_id=user_id)
+    events_user = get_all_events(calendars_user=calendars_user)
+    calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
+    calendar_tomorrow = get_events_tomorrow(calendar_events= calendar_events_offset)
+    first_event_tomorrow = get_first_event_day(calendar_tomorrow)
+
+    string = travel_time(first_event_tomorrow, user_id=user_id, simulation = simulation)
+
+    return string
+
+def export_all_events(user_id, simulation = True):
+
+    calendars_user = get_calendars_user(user_id=user_id)
+    events_user = get_all_events(calendars_user=calendars_user)
+    calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
+    ordered_events = get_list_events_time(calendar_events_offset)
+    
+    out = ["📆 All the future events found are: "]
+    for calendar in ordered_events:
+        for elem in ordered_events[calendar]:
+            start_time = elem.start.strftime(' - %a %d %b, %Y at %H:%M \t\t') if elem.start else "No start time"
+            app = start_time + elem.summary
+            out.append(app)
+
+    output = "\n".join(out)
+
+    return output
+    
 
 if __name__ == "__main__":
 
     USER = settings.get_parameter("ID_MAIN")
     
-    # 1. Get the calendar settings associated to USER in settings.json: dictionnary, key: calendar_id, value: offset value
-    calendars_user = get_calendars_user(user_id=USER)
-    print(calendars_user, "", sep = "\n")
+    # # 1. Get the calendar settings associated to USER in settings.json: dictionnary, key: calendar_id, value: offset value
+    # calendars_user = get_calendars_user(user_id=USER)
+    # # print(calendars_user, "", sep = "\n")
 
-    # 2. Get all the events from all the calendars of USER: dictionnary, key: calendar_id, value: list of the events
-    events_user = get_all_events(calendars_user=calendars_user)
-    print(events_user, "", sep = "\n")
+    # # 2. Get all the events from all the calendars of USER: dictionnary, key: calendar_id, value: list of the events
+    # events_user = get_all_events(calendars_user=calendars_user)
+    # # print(events_user, "", sep = "\n")
 
-    # 3. Offsetting the time of the events: same format as events_user but the events from the calendar needing offset are changed
-    calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
-    print(calendar_events_offset, "", sep = "\n")
+    # # 3. Offsetting the time of the events: same format as events_user but the events from the calendar needing offset are changed
+    # calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
+    # # print(calendar_events_offset, "", sep = "\n")
 
-    # 4. Order the events by starting time
-    ordered_events = get_list_events_time(calendar_events_offset)
-    print(ordered_events, "", sep = "\n")
+    # # 4. Order the events by starting time
+    # ordered_events = get_list_events_time(calendar_events_offset)
+    # # print(ordered_events, "", sep = "\n")
 
-    # 5. Filter to keep only the events of tomorrow
-    calendar_tomorrow = get_events_tomorrow(calendar_events= calendar_events_offset)
-    print(calendar_tomorrow, "", sep = "\n")
+    # # 5. Filter to keep only the events of tomorrow
+    # calendar_tomorrow = get_events_tomorrow(calendar_events= calendar_events_offset)
+    # # print(calendar_tomorrow, "", sep = "\n")
 
-    # 5.2 Or the event 2 days ahead
-    calendar_later = get_events_tomorrow(calendar_events= calendar_events_offset, days_forward=2)
-    print(calendar_later, "", sep = "\n")
+    # # 5.2 Or the event 2 days ahead
+    # calendar_later = get_events_tomorrow(calendar_events= calendar_events_offset, days_forward=2)
+    # # print(calendar_later, "", sep = "\n")
 
-    # 6. Get the first element of tomorrow
-    first_event_tomorrow = get_first_event_day(calendar_tomorrow)
-    print(first_event_tomorrow, "", sep = "\n")
+    # # 6. Get the first element of tomorrow
+    # first_event_tomorrow = get_first_event_day(calendar_tomorrow)
+    # print(first_event_tomorrow, "", sep = "\n")
+
+    # # ======================================================
+    # string = travel_time(first_event_tomorrow, settings.get_parameter("ID_MAIN"), simulation=True)
+
+    # print(string)
+
+    # print(export_first_event_tomorrow(user_id=USER))
