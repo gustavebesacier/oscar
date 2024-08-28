@@ -2,6 +2,8 @@ from Utils.settings import get_parameter
 from Utils.Communications import print_input, give_time, start, help_command
 from Weather.Weather import summarize, string_to_export
 from Transport.SBB import export_string_sbb
+from Calendar.Calendar import export_first_event_tomorrow, export_all_events
+from Utils import settings
 
 import logging
 import os
@@ -40,6 +42,17 @@ async def handle_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
             schedule_message = export_string_sbb(station=get_parameter("STOP_MAIN"), limit=6)
 
         await update.message.reply_text(schedule_message)
+
+    if update.message.text.lower() == "calendar":
+        id = update.message.from_user.id
+        calendar = export_first_event_tomorrow(user_id = id, simulation=True)
+        await update.message.reply_text(calendar)
+
+    if update.message.text.lower() == "calendar list":
+        id = update.message.from_user.id
+        calendar = export_all_events(user_id = id, simulation=True)
+        await update.message.reply_text(calendar)
+
         
 
 def main() -> None:
