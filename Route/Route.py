@@ -13,7 +13,6 @@ import copy
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Utils import settings
-from Calendar import Calendar
 
 # Constants
 PATH = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +29,6 @@ def address_to_coordinates(address: str) -> tuple:
     Returns:
         tuple: (lat, lon)
     """
-
     loc = Nominatim(user_agent="Geopy Library")
     getLoc = loc.geocode(address)
     lat, lon = getLoc.latitude, getLoc.longitude
@@ -52,6 +50,18 @@ def get_route(start_lat: float, start_lon: float, end_lat: float, end_lon: float
     )
 
     return route
+
+def get_time_distance_openrouteservice(route: json):
+    """Uses the response from the Openrouteservice API to extract the duration and the distance of the route.
+
+    Args:
+        route (json): API response.
+    """
+
+    distance = route["features"][0]["properties"]["summary"]["distance"]
+    duration = route["features"][0]["properties"]["summary"]["duration"]
+
+    return distance, duration
 
 def get_route_gmaps(start_lat: float, start_lon: float, end_lat: float, end_lon: float, arrival_time: datetime = None, transit: str = "walking"):
     """Computes the full route form the start point to the end point, which are coordinates. 
@@ -250,7 +260,7 @@ def string_public_transport(transit_details: list) -> list:
 
     for transit in transit_details:
         duration = datetime.timedelta(seconds=(transit["arrival_time"] - transit["departure_time"]))
-        transit_step = f"🚌 Take the {transit['transport']} at {transit['departure_stop']} at {convert_epoch_datetime(transit['departure_time']).strftime('%Hh%M')} for {transit['nb_stops']} stops until {transit['arrival_stop']} ({duration.seconds//60}min)."
+        transit_step = f" - Take the {transit['transport']} at {transit['departure_stop']} at {convert_epoch_datetime(transit['departure_time']).strftime('%Hh%M')} for {transit['nb_stops']} stops until {transit['arrival_stop']} ({duration.seconds//60}min)."
         transit_steps.append(transit_step)
     
     return transit_steps
@@ -325,7 +335,7 @@ def export_string_route(route: json) -> str:
         # Take the m1 at Lausanne-Flon at 10h20 for 9 stops until EPFL (13min)."
         departure_time_route = convert_epoch_datetime(departure_time_route).strftime('%Hh%M')
         arrival_time_route = convert_epoch_datetime(arrival_time_route).strftime('%Hh%M')
-        output = f"🚶‍♂️‍➡️ Leave at {departure_time_route} by foot.\n" + "\n".join(transit_steps_string) + f"\n🎯 Arrival at {arrival_time_route}."
+        output = f"🚌 Leave at {departure_time_route} by foot.\n" + "\n".join(transit_steps_string) + f"\n🎯 Arrival at {arrival_time_route}."
 
     else:
         departure_time, trip_duration, trip_distance = get_time_distance(route = route)
@@ -343,14 +353,14 @@ def convert_epoch_datetime(epoch: int) -> datetime:
 
 if __name__ == "__main__":
 
-    # address1 = "Ouchy Olympique, Lausanne"
-    # address2 = "Rolex Learning Center, Ecublens"
+    address1 = "Ouchy Olympique, Lausanne"
+    address2 = "Rolex Learning Center, Ecublens"
 
-    # # 1. Get the coordinates using the adress
-    # lat1, lon1 = address_to_coordinates(address=address1)
-    # lat2, lon2 = address_to_coordinates(address=address2)
-    # print(address1, f"Lat, Lon: ({lat1}, {lon1})", sep = "\n")
-    # print(address2, f"Lat, Lon: ({lat2}, {lon2})", "", sep = "\n")
+    # 1. Get the coordinates using the adress
+    lat1, lon1 = address_to_coordinates(address=address1)
+    lat2, lon2 = address_to_coordinates(address=address2)
+    print(address1, f"Lat, Lon: ({lat1}, {lon1})", sep = "\n")
+    print(address2, f"Lat, Lon: ({lat2}, {lon2})", "", sep = "\n")
 
     # # 2. Get route between two points using Openrouteservice api
     # route = get_route(lat1, lon1, lat2, lon2)
@@ -368,17 +378,36 @@ if __name__ == "__main__":
     with open(PATH + "/Data/route_transit.json", 'r') as json_file:
         route = json.load(json_file)
 
-    # 4. Display the route created with googlemaps api on a map 
-    map = display_route_map(route = route, open_web= True)
+    # # 4. Display the route created with googlemaps api on a map 
+    # map = display_route_map(route = route, open_web= True)
 
-    # 5. Get the duration and distance of the trip
-    departure_time, trip_duration, trip_distance = get_time_distance(route = route)
-    print(departure_time, trip_duration, trip_distance, "", sep="\n")
+    # # 5. Get the duration and distance of the trip
+    # departure_time, trip_duration, trip_distance = get_time_distance(route = route)
+    # print(departure_time, trip_duration, trip_distance, "", sep="\n")
 
-    # 6. Get the details of the route in the case it takes public transports, and returns the steps
-    departure_time_route, arrival_time_route, transit_details = get_transport_details(route = route)
-    print(departure_time_route, arrival_time_route, transit_details, "", sep = "\n")
+    # # 6. Get the details of the route in the case it takes public transports, and returns the steps
+    # departure_time_route, arrival_time_route, transit_details = get_transport_details(route = route)
+    # print(departure_time_route, arrival_time_route, transit_details, "", sep = "\n")
 
-    # 7. Print all relevant information from the json. It determines what type of transport is being used, and adapt the output
+    # # 7. Print all relevant information from the json. It determines what type of transport is being used, and adapt the output
     information = export_string_route(route = route)
     print(information, "", sep = "\n")
+
+    # ======================================================
+    # address1 = "Ouchy Olympique, Lausanne"
+    # address2 = "Rolex Learning Center, Ecublens"
+
+    # # 1. Get the coordinates using the adress
+    # lat1, lon1 = address_to_coordinates(address=address1)
+    # lat2, lon2 = address_to_coordinates(address=address2)
+    # print(address1, f"Lat, Lon: ({lat1}, {lon1})", sep = "\n")
+    # print(address2, f"Lat, Lon: ({lat2}, {lon2})", "", sep = "\n")
+
+    # # 2. Get route between two points using Openrouteservice api
+    # route = get_route(lat1, lon1, lat2, lon2)
+    # # print(json.dumps(route, indent=4), "", sep = "\n") # json.dump: better display
+
+    # distance = route["features"][0]["properties"]["summary"]["distance"]
+    # duration = route["features"][0]["properties"]["summary"]["duration"]
+
+    # print(distance, duration)
