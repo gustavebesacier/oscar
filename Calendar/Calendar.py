@@ -263,37 +263,30 @@ if __name__ == "__main__":
 
     USER = settings.get_parameter("ID_MAIN")
     
-    # # 1. Get the calendar settings associated to USER in settings.json: dictionnary, key: calendar_id, value: offset value
-    # calendars_user = get_calendars_user(user_id=USER)
-    # # print(calendars_user, "", sep = "\n")
+    # 1. Get the calendar settings associated to USER in settings.json: dictionnary, key: calendar_id, value: offset value
+    calendars_user = get_calendars_user(user_id=USER)
+    print(calendars_user, "", sep = "\n")
 
-    # # 2. Get all the events from all the calendars of USER: dictionnary, key: calendar_id, value: list of the events
-    # events_user = get_all_events(calendars_user=calendars_user)
-    # # print(events_user, "", sep = "\n")
+    # 2. Get all the events from all the calendars of USER: dictionnary, key: calendar_id, value: list of the events
+    events_user = get_all_events(calendars_user=calendars_user)
+    print(events_user, "", sep = "\n")
 
-    # # 3. Offsetting the time of the events: same format as events_user but the events from the calendar needing offset are changed
-    # calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
-    # # print(calendar_events_offset, "", sep = "\n")
+    # 3. Offsetting the time of the events: same format as events_user but the events from the calendar needing offset are changed
+    calendar_events_offset = offset_time(calendars_user = calendars_user, calendar_events= events_user)
+    # print(calendar_events_offset, "", sep = "\n")
 
-    # # 4. Order the events by starting time
-    # ordered_events = get_list_events_time(calendar_events_offset)
-    # # print(ordered_events, "", sep = "\n")
+    # 4. Order the events by starting time
+    ordered_events = get_list_events_time(calendar_events_offset)
+    # print(ordered_events, "", sep = "\n")
 
-    # # 5. Filter to keep only the events of tomorrow
-    # calendar_tomorrow = get_events_tomorrow(calendar_events= calendar_events_offset)
-    # # print(calendar_tomorrow, "", sep = "\n")
+    # 5. Filter to keep only the events of tomorrow
+    calendar_tomorrow = get_events_tomorrow(calendar_events= calendar_events_offset)
+    # print(calendar_tomorrow, "", sep = "\n")
 
-    # # 5.2 Or the event 2 days ahead
-    # calendar_later = get_events_tomorrow(calendar_events= calendar_events_offset, days_forward=2)
-    # # print(calendar_later, "", sep = "\n")
+    # 5.2 Or the event 2 days ahead
+    calendar_later = get_events_tomorrow(calendar_events= calendar_events_offset, days_forward=2)
+    # print(calendar_later, "", sep = "\n")
 
-    # # 6. Get the first element of tomorrow
-    # first_event_tomorrow = get_first_event_day(calendar_tomorrow)
-    # print(first_event_tomorrow, "", sep = "\n")
-
-    # # ======================================================
-    # string = travel_time(first_event_tomorrow, settings.get_parameter("ID_MAIN"), simulation=True)
-
-    # print(string)
-
-    # print(export_first_event_tomorrow(user_id=USER))
+    # 6. Get the first element of tomorrow
+    first_event_tomorrow = get_first_event_day(calendar_tomorrow)
+    print(first_event_tomorrow, "", sep = "\n")
