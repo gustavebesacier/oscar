@@ -1,0 +1,408 @@
+[
+    {
+        "bounds": {
+            "northeast": {
+                "lat": 46.5248048,
+                "lng": 6.574874299999999
+            },
+            "southwest": {
+                "lat": 46.5182198,
+                "lng": 6.567583399999999
+            }
+        },
+        "copyrights": "Map data \u00a92024",
+        "legs": [
+            {
+                "distance": {
+                    "text": "1.3 km",
+                    "value": 1253
+                },
+                "duration": {
+                    "text": "17 mins",
+                    "value": 1033
+                },
+                "end_address": "Rolex Learning Center, 1015 Ecublens, Switzerland",
+                "end_location": {
+                    "lat": 46.5182574,
+                    "lng": 6.567583399999999
+                },
+                "start_address": "Vortex BP 906, Rte de Praz V\u00e9guey 29, 1022 Chavannes-pr\u00e8s-Renens, Switzerland",
+                "start_location": {
+                    "lat": 46.52480389999999,
+                    "lng": 6.574874299999999
+                },
+                "steps": [
+                    {
+                        "distance": {
+                            "text": "51 m",
+                            "value": 51
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 45
+                        },
+                        "end_location": {
+                            "lat": 46.5248048,
+                            "lng": 6.574230000000001
+                        },
+                        "html_instructions": "Head <b>west</b>",
+                        "polyline": {
+                            "points": "_{}zG}ccg@@FBJ@J?L?R?JALEb@"
+                        },
+                        "start_location": {
+                            "lat": 46.52480389999999,
+                            "lng": 6.574874299999999
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "22 m",
+                            "value": 22
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 17
+                        },
+                        "end_location": {
+                            "lat": 46.52472299999999,
+                            "lng": 6.573987
+                        },
+                        "html_instructions": "Turn <b>left</b> toward <b>Rte de Praz V\u00e9guey</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "_{}zG}_cg@BDBB@D@H@J@H"
+                        },
+                        "start_location": {
+                            "lat": 46.5248048,
+                            "lng": 6.574230000000001
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 125
+                        },
+                        "duration": {
+                            "text": "2 mins",
+                            "value": 98
+                        },
+                        "end_location": {
+                            "lat": 46.5236816,
+                            "lng": 6.5745694
+                        },
+                        "html_instructions": "Turn <b>left</b> onto <b>Rte de Praz V\u00e9guey</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "oz}zGm~bg@PEH?TGnC}ALG"
+                        },
+                        "start_location": {
+                            "lat": 46.52472299999999,
+                            "lng": 6.573987
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 160
+                        },
+                        "duration": {
+                            "text": "2 mins",
+                            "value": 116
+                        },
+                        "end_location": {
+                            "lat": 46.5225561,
+                            "lng": 6.5737814
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "_t}zGabcg@FHF@F?JCJGFEDIFEDAF?D@FDDDJJJHFHJLDJDDP`@P^LZ@F@@@@@?@?@?@A"
+                        },
+                        "start_location": {
+                            "lat": 46.5236816,
+                            "lng": 6.5745694
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "56 m",
+                            "value": 56
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 48
+                        },
+                        "end_location": {
+                            "lat": 46.5222438,
+                            "lng": 6.5732152
+                        },
+                        "html_instructions": "Slight <b>right</b>",
+                        "maneuver": "turn-slight-right",
+                        "polyline": {
+                            "points": "_m}zGc}bg@~@nB"
+                        },
+                        "start_location": {
+                            "lat": 46.5225561,
+                            "lng": 6.5737814
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 145
+                        },
+                        "duration": {
+                            "text": "3 mins",
+                            "value": 152
+                        },
+                        "end_location": {
+                            "lat": 46.5210145,
+                            "lng": 6.5736355
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "_k}zGsybg@h@i@PQF?\\ADADCJGTGfA?\\?"
+                        },
+                        "start_location": {
+                            "lat": 46.5222438,
+                            "lng": 6.5732152
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "22 m",
+                            "value": 22
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 19
+                        },
+                        "end_location": {
+                            "lat": 46.520993,
+                            "lng": 6.5733717
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "ic}zGg|bg@?`@@H@H"
+                        },
+                        "start_location": {
+                            "lat": 46.5210145,
+                            "lng": 6.5736355
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.2 km",
+                            "value": 209
+                        },
+                        "duration": {
+                            "text": "3 mins",
+                            "value": 162
+                        },
+                        "end_location": {
+                            "lat": 46.5197773,
+                            "lng": 6.571735299999999
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "ec}zGqzbg@@JBNJb@VrADPFVFRDRDNBDBFDFDFBH@F?FRTT@r@AT?R@B?"
+                        },
+                        "start_location": {
+                            "lat": 46.520993,
+                            "lng": 6.5733717
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 125
+                        },
+                        "duration": {
+                            "text": "2 mins",
+                            "value": 100
+                        },
+                        "end_location": {
+                            "lat": 46.5193079,
+                            "lng": 6.570723
+                        },
+                        "html_instructions": "Slight <b>left</b>",
+                        "maneuver": "turn-slight-left",
+                        "polyline": {
+                            "points": "s{|zGkpbg@X@N?d@?FBBHDv@CbC"
+                        },
+                        "start_location": {
+                            "lat": 46.5197773,
+                            "lng": 6.571735299999999
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "15 m",
+                            "value": 15
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 14
+                        },
+                        "end_location": {
+                            "lat": 46.5191688,
+                            "lng": 6.570731899999999
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "ux|zG_jbg@PAH?"
+                        },
+                        "start_location": {
+                            "lat": 46.5193079,
+                            "lng": 6.570723
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 98
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 79
+                        },
+                        "end_location": {
+                            "lat": 46.5191671,
+                            "lng": 6.569464
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "yw|zGajbg@@r@?lA@\\@d@@J?DABAD?BABAB?D?H"
+                        },
+                        "start_location": {
+                            "lat": 46.5191688,
+                            "lng": 6.570731899999999
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "0.1 km",
+                            "value": 106
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 86
+                        },
+                        "end_location": {
+                            "lat": 46.5189825,
+                            "lng": 6.5682915
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "yw|zGcbbg@XABB@B@B?H@J@hE"
+                        },
+                        "start_location": {
+                            "lat": 46.5191671,
+                            "lng": 6.569464
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "54 m",
+                            "value": 54
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 45
+                        },
+                        "end_location": {
+                            "lat": 46.5184951,
+                            "lng": 6.5682886
+                        },
+                        "html_instructions": "Turn <b>left</b>",
+                        "maneuver": "turn-left",
+                        "polyline": {
+                            "points": "sv|zGyzag@|A?@?"
+                        },
+                        "start_location": {
+                            "lat": 46.5189825,
+                            "lng": 6.5682915
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "55 m",
+                            "value": 55
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 44
+                        },
+                        "end_location": {
+                            "lat": 46.5182198,
+                            "lng": 6.567703799999999
+                        },
+                        "html_instructions": "Turn <b>right</b>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "ss|zGyzag@DLBJBDHNFHDHFPDPBL"
+                        },
+                        "start_location": {
+                            "lat": 46.5184951,
+                            "lng": 6.5682886
+                        },
+                        "travel_mode": "WALKING"
+                    },
+                    {
+                        "distance": {
+                            "text": "10 m",
+                            "value": 10
+                        },
+                        "duration": {
+                            "text": "1 min",
+                            "value": 8
+                        },
+                        "end_location": {
+                            "lat": 46.5182574,
+                            "lng": 6.567583399999999
+                        },
+                        "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                        "maneuver": "turn-right",
+                        "polyline": {
+                            "points": "{q|zGcwag@CFAHAD"
+                        },
+                        "start_location": {
+                            "lat": 46.5182198,
+                            "lng": 6.567703799999999
+                        },
+                        "travel_mode": "WALKING"
+                    }
+                ],
+                "traffic_speed_entry": [],
+                "via_waypoint": []
+            }
+        ],
+        "overview_polyline": {
+            "points": "_{}zG}ccg@Fl@?^Gp@FHBNBTZETGnC}ALGFHN@VKLOLGL@LJj@l@n@rARf@D?@A~@nBz@{@d@AJE`@OdB?@j@BTl@xCZnAR\\DP?FRThA?h@@rA@FBBHDv@CbCZA@`CDtAEPAH?HXADF@LBtE~A?HXLTLRLb@BLCFCN"
+        },
+        "summary": "Rte de Praz V\u00e9guey",
+        "warnings": [
+            "Walking directions are in beta. Use caution \u2013 This route may be missing sidewalks or pedestrian paths."
+        ],
+        "waypoint_order": []
+    }
+]
